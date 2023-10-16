@@ -17,6 +17,7 @@ You have to reboot your system after run "initial_setup.sh"
   + simplescreenrecorder  
   + ROS_FOXY
   + CAMEL_TOOLS
+  + qpOASES
   + **Raisim** (with Eigen, RBDL, Qt5)
 
 - upboard_initial_setup.sh 

@@ -51,7 +51,7 @@ echo "."
 echo "."
 echo "."
 echo -e "$COLOR_GREEN --------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |   INSTALL 00/14   | $COLOR_END"
+echo -e "$COLOR_GREEN |   INSTALL 00/15   | $COLOR_END"
 echo -e "$COLOR_GREEN |  start installing | $COLOR_END"
 echo -e "$COLOR_GREEN --------------------- $COLOR_END"
 
@@ -59,13 +59,13 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 01/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 01/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |      Essential      | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install build-essential wget gpg curl pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 02/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 02/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Cmake        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -77,49 +77,49 @@ cd cmake-3.21.0
 cd .. && sudo rm -rf cmake-3.21.0 && sudo rm -rf cmake-3.21.0.tar.gz
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 03/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 03/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        CLion        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo snap install clion --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 04/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 04/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Slack        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo snap install slack --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 05/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 05/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        notion       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo snap install notion-snap-reborn --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 06/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 06/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |       Python3       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install python3 python3-pip -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 07/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 07/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |      terminator     | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install terminator -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 8/14     | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 8/15     | $COLOR_END"
 echo -e "$COLOR_GREEN | simplescreenrecorder| $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install simplescreenrecorder -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 9/14     | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 9/15     | $COLOR_END"
 echo -e "$COLOR_GREEN |        Eigen        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install libeigen3-dev
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 10/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 10/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |         RBDL        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -134,14 +134,14 @@ make
 sudo make install
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 11/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 11/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |         Qt5         | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install qtcreator -y
 sudo apt-get install qt5-default -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 12/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 12/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Raisim       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -160,7 +160,7 @@ echo " -------------------------------------------------------------------------
 echo " |     For link raisim, cmake option : -DCMAKE_PREFIX_PATH=$INSTALL_DIR/raisimLib/raisim/linux     | "
 echo " --------------------------------------------------------------------------------------------------- "
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 13/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 13/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |        ROS          | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 
@@ -202,7 +202,7 @@ sudo apt install python3-colcon-common-extensions -y
 
 echo
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 13/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 14/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |     camel-tools     | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $CTOOL_INSTALL_DIR
@@ -211,9 +211,23 @@ sudo update-grub
 sudo chmod +x tools_install.sh
 ./tools_install.sh -a
 
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 15/15    | $COLOR_END"
+echo -e "$COLOR_GREEN |       qpOASES       | $COLOR_END"
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+cd $INSTALL_DIR
+
+git clone https://github.com/coin-or/qpOASES.git
+cd qpOASES
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
 echo
 echo -e "$COLOR_GREEN --------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |   INSTALL 14/14   | $COLOR_END"
+echo -e "$COLOR_GREEN |   INSTALL 15/15   | $COLOR_END"
 echo -e "$COLOR_GREEN |     installed     | $COLOR_END"
 echo -e "$COLOR_GREEN --------------------- $COLOR_END"
 
