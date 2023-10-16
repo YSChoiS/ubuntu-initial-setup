@@ -14,7 +14,7 @@ echo
 echo -e "$COLOR_RED ------------------------------------------------------------------------ $COLOR_END"
 echo -e "$COLOR_RED |                  | Type package install directory |                  | $COLOR_END"
 echo -e "$COLOR_RED ------------------------------------------------------------------------ $COLOR_END"
-echo " ex) /home/wj or /home/wj/Library ..."
+echo " ex) /home/ys or /home/ys/Library ..."
 read INSTALL_DIR
 echo "Check install directory : $INSTALL_DIR"
 echo "."
@@ -22,9 +22,19 @@ echo "."
 echo -e "$COLOR_RED ------------------------------------------------------------------------- $COLOR_END"
 echo -e "$COLOR_RED |                   | Type Raisim install directory |                   | $COLOR_END"
 echo -e "$COLOR_RED ------------------------------------------------------------------------- $COLOR_END"
-echo "ex) /home/wj/raisimLib/install or /home/wj/Library/raisimLib/build/install"
+echo "ex) /home/ys/raisimLib/install or /home/ys/Library/raisimLib/build/install"
 read RAI_INSTALL_DIR
 echo "Check Raisim install directory : $RAI_INSTALL_DIR"
+echo "."
+echo "."
+echo "Load gpu drivers..."
+
+echo -e "$COLOR_RED ------------------------------------------------------------------------- $COLOR_END"
+echo -e "$COLOR_RED |                   | Type Camel tools installed directory |                   | $COLOR_END"
+echo -e "$COLOR_RED ------------------------------------------------------------------------- $COLOR_END"
+echo "ex) /home/ys/Library/camel-tools"
+read CTOOL_INSTALL_DIR
+echo "Check camel-tools install directory : $CTOOL_INSTALL_DIR"
 echo "."
 echo "."
 echo "Load gpu drivers..."
@@ -50,23 +60,12 @@ sudo apt-get upgrade -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 01/14    | $COLOR_END"
-echo -e "$COLOR_GREEN |      GPU driver     | $COLOR_END"
+echo -e "$COLOR_GREEN |      Essential      | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-if [ $GPU_DRIVER ]
-then
-  sudo apt-get install $GPU_DRIVER -y
-else
-  echo "Skip this process."
-fi
+sudo apt-get install build-essential wget gpg curl pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 02/14    | $COLOR_END"
-echo -e "$COLOR_GREEN |      Essential      | $COLOR_END"
-echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-sudo apt-get install build-essential git wget gpg curl pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
-
-echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 03/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Cmake        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -78,62 +77,49 @@ cd cmake-3.21.0
 cd .. && sudo rm -rf cmake-3.21.0 && sudo rm -rf cmake-3.21.0.tar.gz
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 04/14    | $COLOR_END"
-echo -e "$COLOR_GREEN |        Docker       | $COLOR_END"
-echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-sudo apt-get update -y
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt-get update -y
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-
-echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 05/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 03/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |        CLion        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo snap install clion --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 06/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 04/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Slack        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo snap install slack --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 07/14    | $COLOR_END"
-echo -e "$COLOR_GREEN |        Chrome       | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 05/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |        notion       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-wget -nc https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
-sudo rm -rf ./google-chrome-stable_current_amd64.deb
+sudo snap install notion-snap-reborn --classic
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 08/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 06/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |       Python3       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install python3 python3-pip -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 09/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 07/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |      terminator     | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install terminator -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 10/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 8/14     | $COLOR_END"
 echo -e "$COLOR_GREEN | simplescreenrecorder| $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install simplescreenrecorder -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 11/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 9/14     | $COLOR_END"
 echo -e "$COLOR_GREEN |        Eigen        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install libeigen3-dev
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 12/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 10/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |         RBDL        | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -148,14 +134,14 @@ make
 sudo make install
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 13/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 11/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |         Qt5         | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 sudo apt-get install qtcreator -y
 sudo apt-get install qt5-default -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-echo -e "$COLOR_GREEN |    INSTALL 14/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 12/14    | $COLOR_END"
 echo -e "$COLOR_GREEN |        Raisim       | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 cd $INSTALL_DIR
@@ -173,7 +159,58 @@ echo "export PYTHONPATH=$PYTHONPATH:$INSTALL_DIR/raisimLib/raisim/linux/lib" >> 
 echo " --------------------------------------------------------------------------------------------------- "
 echo " |     For link raisim, cmake option : -DCMAKE_PREFIX_PATH=$INSTALL_DIR/raisimLib/raisim/linux     | "
 echo " --------------------------------------------------------------------------------------------------- "
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 13/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |        ROS          | $COLOR_END"
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+
+cd
+
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+sudo apt update && sudo apt install curl gnupg2 lsb-release -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+sudo apt update
+
+sudo apt install ros-foxy-desktop -y
+
+sudo apt install -y python3-pip
+pip3 install -U argcomplete
+
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt update
+
+sudo apt install gazebo11 libgazebo11-dev -y
+
+sudo apt install ros-foxy-gazebo-ros-pkgs -y
+
+sudo apt install ros-foxy-rqt* -y
+sudo apt install ros-foxy-image-view -y
+sudo apt install ros-foxy-navigation2 ros-foxy-nav2-bringup -y
+sudo apt install ros-foxy-joint-state-publisher-gui -y
+sudo apt install ros-foxy-xacro -y
+sudo apt update
+sudo apt install python3-colcon-common-extensions -y
+
 echo
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+echo -e "$COLOR_GREEN |    INSTALL 13/14    | $COLOR_END"
+echo -e "$COLOR_GREEN |     camel-tools     | $COLOR_END"
+echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
+cd $CTOOL_INSTALL_DIR
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+sudo update-grub
+sudo chmod +x tools_install.sh
+./tools_install.sh -a
+
 echo
 echo -e "$COLOR_GREEN --------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |   INSTALL 14/14   | $COLOR_END"
@@ -183,8 +220,15 @@ echo -e "$COLOR_GREEN --------------------- $COLOR_END"
 echo -e "$COLOR_GREEN -------------- $COLOR_END"
 echo -e "$COLOR_GREEN | setup bash | $COLOR_END"
 echo -e "$COLOR_GREEN -------------- $COLOR_END"
+
 echo "alias gb='gedit ~/.bashrc'" >> ~/.bashrc
 echo "alias sb='source ~/.bashrc'" >> ~/.bashrc
+echo "alias cb='colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1'" >> ~/.bashrc
+echo "alias rosfoxy='source /opt/ros/foxy/setup.bash && source ~/gcamp_ros2_ws/install/local_setup.bash'" >> ~/.bashrc
+echo "alias rosadd='. install/setup.bash'" >> ~/.bashrc
+echo "alias simgl='cd /home/ys/Library/raisimLib/raisimUnityOpengl/linux/ && ./raisimUnity.x86_64'" >> ~/.bashrc
+echo "alias simuni='cd /home/ys/Library/raisimLib/raisimUnity/linux/ && ./raisimUnity.x86_64'" >> ~/.bashrc
+
 source ~/.bashrc
 
 cd $CURRENT_DIR

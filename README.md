@@ -1,3 +1,4 @@
+### !Made by wookjinahn customized by YeongsuChoi!
 # How to use  
 
 Shell script for initial setting for Ubuntu 20.04.  
@@ -8,13 +9,14 @@ You have to reboot your system after run "initial_setup.sh"
 - initial_setup.sh 
   + Graphic Card Driver
   + Essential Package (GNU, git, wget, curl, make, CMake ...)
-  + Docker
   + CLion  
   + Slack  
-  + Google Chrome  
+  + Notion  
   + Python3  
   + terminator  
   + simplescreenrecorder  
+  + ROS_FOXY
+  + CAMEL_TOOLS
   + **Raisim** (with Eigen, RBDL, Qt5)
 
 - upboard_initial_setup.sh 
@@ -55,6 +57,9 @@ then access the file by termianl
 ### Package install directory
 - This directory is used when you git clone.      
   _ex) /home/wj or /home/wj/Library_
+### camel-tools installed directory
+- This directory is used when you install camel-tools.      
+  _ex) /home/ys/Library/camel-tools_
 ### Raisim install directory
 - This directory is not a git repository, but a place where raisim is built and installed.   
   _ex) /home/wj/raisimLib/install or /home/wj/Library/raisimLib/build/install_
