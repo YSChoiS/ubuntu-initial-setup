@@ -55,12 +55,16 @@ then access the file by termianl
 
 **There are a few things you need to enter during processing.**
 
+## !need to git clone camel-tools first!
+### camel-tools installed directory
+- This directory is used when you install camel-tools.
+
+- 
+  _ex) /home/ys/Library/camel-tools_
+
 ### Package install directory
 - This directory is used when you git clone.      
   _ex) /home/wj or /home/wj/Library_
-### camel-tools installed directory
-- This directory is used when you install camel-tools.      
-  _ex) /home/ys/Library/camel-tools_
 ### Raisim install directory
 - This directory is not a git repository, but a place where raisim is built and installed.   
   _ex) /home/wj/raisimLib/install or /home/wj/Library/raisimLib/build/install_
