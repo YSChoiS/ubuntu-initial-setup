@@ -248,6 +248,7 @@ source ~/.bashrc
 cd $CURRENT_DIR
 cd ..
 sudo rm -rf ubuntu-initial-setup
+timedatectl set-local-rtc 1 --adjust-system-clock
 
 echo -e "$COLOR_RED NEED TO REBOOT ! $COLOR_END"
 echo -e "$COLOR_RED NEED TO REBOOT ! $COLOR_END"
