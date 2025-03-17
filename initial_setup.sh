@@ -16,6 +16,7 @@ echo -e "$COLOR_RED |                  | Type package install directory |       
 echo -e "$COLOR_RED ------------------------------------------------------------------------ $COLOR_END"
 echo " ex) /home/ys or /home/ys/Library ..."
 read INSTALL_DIR
+mkdir $INSTALL_DIR
 echo "Check install directory : $INSTALL_DIR"
 echo "."
 echo "."
@@ -42,7 +43,7 @@ echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 01/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |      Essential      | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-sudo apt-get install build-essential wget gpg curl pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
+sudo apt-get install git build-essential wget gpg curl pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 03/15    | $COLOR_END"
@@ -142,8 +143,8 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update
 sudo apt upgrade
-sudo apt install ros-humble-desktop
-sudo apt install ros-dev-tools
+sudo apt install ros-humble-desktop -y
+sudo apt install ros-dev-tools -y
 
 
 echo
