@@ -98,7 +98,7 @@ echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 11/15    | $COLOR_END"
 echo -e "$COLOR_GREEN |         Qt5         | $COLOR_END"
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
-sudo apt install -y qtcreator qtbase5-dev qt5-qmake cmake qt5-default libqt5gamepad5-dev
+sudo apt install -y qtcreator qtbase5-dev qt5-qmake cmake libqt5gamepad5-dev
 
 echo -e "$COLOR_GREEN ----------------------- $COLOR_END"
 echo -e "$COLOR_GREEN |    INSTALL 12/15    | $COLOR_END"
